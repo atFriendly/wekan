@@ -43,13 +43,8 @@ Boards.attachSchema(new SimpleSchema({
       'green', 'yellow', 'orange', 'red', 'purple',
       'blue', 'sky', 'lime', 'pink', 'black',
     ],
-  // De-normalized label system
+  },
   'prices.$._id': {
-    // We don't specify that this field must be unique in the board because that
-    // will cause performance penalties and is not necessary since this field is
-    // always set on the server.
-    // XXX Actually if we create a new label, the `_id` is set on the client
-    // without being overwritten by the server, could it be a problem?
     type: String,
   },
   'prices.$.name': {
