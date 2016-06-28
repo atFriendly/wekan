@@ -84,6 +84,7 @@ Cards.helpers({
     const cardLabels = _.filter(boardLabels, (label) => {
       return _.contains(this.labelIds, label._id);
     });
+	console.log('pablo : cardLabels: ' + cardLabels);
     return cardLabels;
   },
 
@@ -96,6 +97,7 @@ Cards.helpers({
     const cardPrices = _.filter(boardPrices, (price) => {
       return _.contains(this.priceIds, price._id);
     });
+	console.log('pablo : boardPrices: ' + boardPrices)
     return boardPrices;
   },
 
