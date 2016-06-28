@@ -261,5 +261,7 @@
     "view-it": "查看",
     "warn-list-archived": "警告: 該卡片位於已刪除的清單中",
     "what-to-do": "要做什麼？",
-	"price":"批價"
+	"price":"批價",
+	"price-create":"創建新標價"
+	
 }

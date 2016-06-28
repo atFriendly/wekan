@@ -38,6 +38,10 @@ Cards.attachSchema(new SimpleSchema({
     type: [String],
     optional: true,
   },
+  priceIds: {
+    type: [String],
+    optional: true,
+  },
   members: {
     type: [String],
     optional: true,
@@ -86,6 +90,19 @@ Cards.helpers({
   hasLabel(labelId) {
     return _.contains(this.labelIds, labelId);
   },
+  
+  prices() {
+    const boardPrices = this.board().prices;
+    const cardPrices = _.filter(boardPrices, (price) => {
+      return _.contains(this.priceIds, price._id);
+    });
+    return boardPrices;
+  },
+
+  hasPrice(priceId) {
+    return _.contains(this.priceIds, priceId);
+  },
+  
 
   user() {
     return Users.findOne(this.userId);
@@ -166,6 +183,22 @@ Cards.mutations({
       return this.removeLabel(labelId);
     } else {
       return this.addLabel(labelId);
+    }
+  },
+  
+  addPrice(priceId) {
+    return { $addToSet: { priceIds: priceId }};
+  },
+
+  removePrice(priceId) {
+    return { $pull: { priceIds: priceId }};
+  },
+
+  togglePrice(priceId) {
+    if (this.priceIds && this.priceIds.indexOf(priceId) > -1) {
+      return this.removePrice(priceId);
+    } else {
+      return this.addPrice(priceId);
     }
   },
 
