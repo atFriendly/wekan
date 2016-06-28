@@ -102,7 +102,6 @@ Cards.helpers({
   hasPrice(priceId) {
     return _.contains(this.priceIds, priceId);
   },
-  
 
   user() {
     return Users.findOne(this.userId);

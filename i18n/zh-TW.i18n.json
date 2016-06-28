@@ -262,6 +262,6 @@
     "warn-list-archived": "警告: 該卡片位於已刪除的清單中",
     "what-to-do": "要做什麼？",
 	"price":"批價",
-	"price-create":"創建新標價"
-	
+	"price-create":"創建新標價",
+	"card-prices-title": "更改該卡片上的標價"
 }

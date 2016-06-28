@@ -50,7 +50,7 @@ Template.cardpricesPopup.events({
     card.toggleprice(priceId);
     evt.preventDefault();
   },
-  'click .js-edit-price': Popup.open('editprice'),
+  'click .js-edit-price': Popup.open('editprices'),
   'click .js-add-price': Popup.open('createprice'),
 });
 
