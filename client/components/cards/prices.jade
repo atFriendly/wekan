@@ -1,0 +1,37 @@
+template(name="formprice")
+  price(for="priceName") {{_ 'name'}}
+  input.js-price-name#priceName(type="text" name="price" value=price autofocus)
+
+  price {{_ "select-color"}}
+  .palette-colors: each prices
+    span.card-price.palette-color.js-palette-color(class="card-price-{{color}}")
+      if(isSelected color)
+        i.fa.fa-check
+
+template(name="createpricePopup")
+  form.create-price
+    with(color=defaultColor)
+      +formprice
+    button.primary.wide(type="submit") {{_ 'create'}}
+
+template(name="editpricePopup")
+  form.edit-price
+    +formprice
+    button.primary.wide.left(type="submit") {{_ 'save'}}
+    button.js-delete-price.negate.wide.right {{_ 'delete'}}
+
+template(name="deletepricePopup")
+  p {{_ "price-delete-pop"}}
+  button.js-confirm.negate.full(type="submit") {{_ 'delete'}}
+
+template(name="cardpricesPopup")
+  ul.edit-prices-pop-over
+    each board.prices
+      li
+        a.card-price-edit-button.fa.fa-pencil.js-edit-price
+        span.card-price.card-price-selectable.js-select-price(class="card-price-{{color}}"
+          class="{{# if ispriceSelected ../_id }}active{{/if}}")
+            = name
+            if(ispriceSelected ../_id)
+              i.card-price-selectable-icon.fa.fa-check
+  a.quiet-button.full.js-add-price {{_ 'price-create'}}

@@ -1,0 +1,156 @@
+@import 'nib'
+
+// XXX Use .board-widget-prices as a flexbox container
+.card-price
+  border-radius: 4px
+  color: white
+  display: inline-block
+  font-weight: 700
+  font-size: 13px
+  margin-right: 4px
+  margin-bottom: 5px
+  padding: 3px 8px
+  max-width: 100%
+  min-width: 8px
+  overflow: ellipsis
+  height: 18px
+  vertical-align: bottom
+
+  &:hover
+    color: white
+
+  &.square
+    height: 30px
+    width: @height
+    padding: 0
+
+  &.add-price
+    box-shadow: 0 0 0 2px darken(white, 25%) inset
+
+    &:hover, &.is-active
+      box-shadow: 0 0 0 2px darken(white, 60%) inset
+
+    i.fa-plus
+      margin-top: 3px
+
+.palette-colors
+  display: flex
+  flex-wrap: wrap
+
+  .palette-color
+    flex-grow: 1
+    display: flex
+    align-items: center
+    justify-content: center
+
+.card-price-green
+  background-color: #3cb500
+
+.card-price-yellow
+  background-color: #fad900
+
+.card-price-orange
+  background-color: #ff9f19
+
+.card-price-red
+  background-color: #eb4646
+
+.card-price-purple
+  background-color: #a632db
+
+.card-price-blue
+  background-color: #0079bf
+
+.card-price-pink
+  background-color: #ff78cb
+
+.card-price-sky
+  background-color: #00c2e0
+
+.card-price-black
+  background-color: #4d4d4d
+
+.card-price-lime
+  background-color: #51e898
+
+.edit-price,
+.create-price
+  .card-price
+    float: left
+    height: 25px
+    margin: 0px 3% 7px 0px
+    width: 10.5%
+    cursor: pointer
+
+.edit-prices
+  input[type="text"]
+    margin: 4px 0 6px 38px
+    width: 243px
+
+  .card-price
+    height: 30px
+    left: 0
+    padding: 1px 5px
+    position: absolute
+    top: 0
+    width: 24px
+
+  .prices-static .card-price
+    line-height: 30px
+    margin-bottom: 4px
+    position: relative
+    top: auto
+    left: 0
+    width: 260px
+
+.edit-prices-pop-over
+  margin-bottom: 8px
+
+.edit-prices-pop-over .shortcut
+  display: inline-block
+
+.card-price-selectable
+  border-radius: 3px
+  cursor: pointer
+  margin: 0
+  margin-bottom: 3px
+  width: 190px
+  min-height: 18px
+  padding: 8px
+  position: relative
+  transition: margin-right .1s
+
+  .card-price-selectable-icon
+    position: absolute
+    top: 8px
+    right: -20px
+
+  &.active:hover,
+  &.active,
+  &.active.selected:hover,
+  &.active.selected
+    padding-right: 32px
+
+    .card-price-selectable-icon
+      right: 6px
+
+  &.selected,
+  &:hover
+    opacity: .8
+
+.active .card-price-selectable
+  &,
+  &:hover
+    margin-right: 0
+
+  .card-price-selectable-icon
+    right: 8px
+
+.card-price-edit-button
+  border-radius: 3px
+  float: right
+  padding: 8px
+
+  &:hover
+    background: #dbdbdb
+

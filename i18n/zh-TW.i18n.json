@@ -76,6 +76,7 @@
     "cardDetailsActionsPopup-title": "卡片動作",
     "cardLabelsPopup-title": "標籤",
     "cardMembersPopup-title": "成員",
+	"cardPricesPopup-title": "批價",
     "cardMorePopup-title": "更多",
     "cards": "卡片",
     "change": "變更",
@@ -259,5 +260,6 @@
     "username": "用戶名",
     "view-it": "查看",
     "warn-list-archived": "警告: 該卡片位於已刪除的清單中",
-    "what-to-do": "要做什麼？"
+    "what-to-do": "要做什麼？",
+	"price":"批價"
 }
