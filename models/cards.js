@@ -85,7 +85,7 @@ Cards.helpers({
 	  console.log('pablo : label: ' + label._id);
       return _.contains(this.labelIds, label._id);
     });
-	console.log('pablo : cardLabels: ' + cardLabels + ", this.labelIds: " + this.labelIds + ', cardLabels: ' + cardLabels);
+	console.log('pablo : boardLabels: ' + boardLabels + ", this.labelIds: " + this.labelIds + ', cardLabels: ' + cardLabels);
     return cardLabels;
   },
 
