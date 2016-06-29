@@ -1,6 +1,6 @@
 template(name="formprice")
   price(for="priceName") {{_ 'name'}}
-  input.js-price-name#priceName(type="text" name="price" value=price autofocus)
+  input.js-price-name#priceName(type="text" name="name" value=name autofocus)
 
   price {{_ "select-color"}}
   .palette-colors: each prices
