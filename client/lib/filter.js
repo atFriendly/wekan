@@ -77,7 +77,7 @@ Filter = {
   members: new SetFilter(),
   priceIds: new SetFilter(),
 
-  _fields: ['labelIds', 'members', 'priceIds'],
+  _fields: ['labelIds', 'members'],
 
   // We don't filter cards that have been added after the last filter change. To
   // implement this we keep the id of these cards in this `_exceptions` fields
