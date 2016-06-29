@@ -263,6 +263,6 @@
 	"price":"批價",
 	"price-create":"創建新標價",
 	"card-prices-title": "更改該卡片上的標價",
-	"cardPricesPopup-title": "批價",
-	"card-edit-prices": "編輯標價"
+	"cardPricesPopup-title": "批價是嗎?",
+	"card-edit-prices": "編輯批價"
 }

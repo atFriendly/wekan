@@ -1,7 +1,6 @@
 let priceColors;
 Meteor.startup(() => {
   priceColors = Boards.simpleSchema()._schema['prices.$.color'].allowedValues;
-  console.log('pablo pablo : ' + priceColors);
 });
 
 BlazeComponent.extendComponent({
@@ -44,7 +43,7 @@ Template.createpricePopup.helpers({
   },
 });
 
-Template.cardpricesPopup.events({
+Template.cardPricesPopup.events({
   'click .js-select-price'(evt) {
     const card = Cards.findOne(Session.get('currentCard'));
     const priceId = this._id;
@@ -96,9 +95,9 @@ Template.editpricePopup.events({
   },
 });
 
-Template.cardpricesPopup.helpers({
+Template.cardPricesPopup.helpers({
   ispriceSelected(cardId) {
-	console.log('cardpricesPopup, priceIds : ' + Cards.findOne(cardId).priceIds + ', this._id: ' + this._id);
+	console.log('cardPricesPopup, priceIds : ' + Cards.findOne(cardId).priceIds + ', this._id: ' + this._id);
     return _.contains(Cards.findOne(cardId).priceIds, this._id);
   },
 });

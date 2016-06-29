@@ -1,7 +1,6 @@
 let labelColors;
 Meteor.startup(() => {
   labelColors = Boards.simpleSchema()._schema['labels.$.color'].allowedValues;
-  console.log('pablo pablo labelColors: ' + labelColors);
 });
 
 BlazeComponent.extendComponent({
