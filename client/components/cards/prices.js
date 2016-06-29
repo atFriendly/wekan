@@ -1,6 +1,7 @@
 let priceColors;
 Meteor.startup(() => {
   priceColors = Boards.simpleSchema()._schema['prices.$.color'].allowedValues;
+  console.log('pablo pablo : ' + priceColors);
 });
 
 BlazeComponent.extendComponent({
@@ -14,7 +15,7 @@ BlazeComponent.extendComponent({
 
   prices() {
     return priceColors.map((color) => {
-      return { color, name: '' };
+      return { color, name: '000' };
     });
   },
 
