@@ -96,9 +96,8 @@ Template.editpricePopup.events({
 });
 
 Template.cardpricesPopup.helpers({
-  console.log('cardpricesPopupA, priceIds : ' + priceIds);
   ispriceSelected(cardId) {
-	console.log('cardpricesPopup, priceIds : ' + priceIds)
+	console.log('cardpricesPopup, priceIds : ' + Cards.findOne(cardId).priceIds + ', this._id: ' + this._id);
     return _.contains(Cards.findOne(cardId).priceIds, this._id);
   },
 });
