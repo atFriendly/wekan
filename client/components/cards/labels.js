@@ -96,7 +96,7 @@ Template.editLabelPopup.events({
 
 Template.cardLabelsPopup.helpers({
   isLabelSelected(cardId) {
-	console.log('cardLabelsPopup, labelIds : ' + labelIds)
+	console.log('cardLabelsPopup, labelIds : ' + Cards.findOne(cardId).labelIds)
     return _.contains(Cards.findOne(cardId).labelIds, this._id);
   },
 });
