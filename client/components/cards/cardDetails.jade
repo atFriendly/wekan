@@ -39,6 +39,8 @@ template(name="cardDetails")
       .card-details-item.card-details-item-prices
         h3.card-details-item-title {{_ 'price'}}
         a(class="{{#if currentUser.isBoardMember}}js-add-prices{{else}}is-disabled{{/if}}" title="{{_ 'card-prices-title'}}")
+          each prices
+            span.card-price(class="card-price-{{color}}" title=name)= name
         if currentUser.isBoardMember
           a.card-label.add-price.js-add-prices(title="{{_ 'card-prices-title'}}")
             i.fa.fa-plus    
