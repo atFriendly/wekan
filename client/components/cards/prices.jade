@@ -26,8 +26,6 @@ template(name="deletePricePopup")
 
 template(name="cardPricesPopup")
   ul.edit-prices-pop-over
-  a.quiet-button.full.js-add-price {{_ 'price-create'}}
-
     each board.prices
       li
         a.card-price-edit-button.fa.fa-pencil.js-edit-price
@@ -36,4 +34,3 @@ template(name="cardPricesPopup")
             = name
             if(ispriceSelected ../_id)
               i.card-price-selectable-icon.fa.fa-check
-  a.quiet-button.full.js-add-price {{_ 'price-create'}}
