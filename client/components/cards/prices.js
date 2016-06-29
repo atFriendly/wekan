@@ -50,7 +50,7 @@ Template.cardpricesPopup.events({
     card.toggleprice(priceId);
     evt.preventDefault();
   },
-  'click .js-edit-price': Popup.open('editprices'),
+  'click .js-edit-price': Popup.open('editprice'),
   'click .js-add-price': Popup.open('createprice'),
 });
 
@@ -72,8 +72,9 @@ Template.createpricePopup.events({
     evt.preventDefault();
     const board = Boards.findOne(Session.get('currentBoard'));
     const name = tpl.$('#priceName').val().trim();
+	console.log('pablo : priceName : ' + name);
     const color = Blaze.getData(tpl.find('.fa-check')).color;
-    board.addprice(name, color);
+    board.addPrice(name, color);
     Popup.back();
   },
 });
@@ -89,7 +90,7 @@ Template.editpricePopup.events({
     const board = Boards.findOne(Session.get('currentBoard'));
     const name = tpl.$('#priceName').val().trim();
     const color = Blaze.getData(tpl.find('.fa-check')).color;
-    board.editprice(this._id, name, color);
+    board.editPrice(this._id, name, color);
     Popup.back();
   },
 });

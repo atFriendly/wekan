@@ -148,8 +148,16 @@ Boards.helpers({
     return _.findWhere(this.labels, { name, color });
   },
 
+  getPrice(name, color) {
+    return _.findWhere(this.prices, { name, color });
+  },
+  
   labelIndex(labelId) {
     return _.pluck(this.labels, '_id').indexOf(labelId);
+  },
+  
+  priceIndex(priceId) {
+    return _.pluck(this.prices, '_id').indexOf(priceId);
   },
 
   memberIndex(memberId) {
@@ -177,6 +185,12 @@ Boards.helpers({
   pushLabel(name, color) {
     const _id = Random.id(6);
     Boards.direct.update(this._id, { $push: {labels: { _id, name, color }}});
+    return _id;
+  },
+  
+  pushPrice(name, color) {
+    const _id = Random.id(6);
+    Boards.direct.update(this._id, { $push: {prices: { _id, name, color }}});
     return _id;
   },
 });
@@ -231,6 +245,33 @@ Boards.mutations({
 
   removeLabel(labelId) {
     return { $pull: { labels: { _id: labelId }}};
+  },
+  
+  addPrice(name, color) {
+    // If label with the same name and color already exists we don't want to
+    // create another one because they would be indistinguishable in the UI
+    // (they would still have different `_id` but that is not exposed to the
+    // user).
+    if (!this.getPrice(name, color)) {
+      const _id = Random.id(6);
+      return { $push: {prices: { _id, name, color }}};
+    }
+  },
+
+  editPrice(priceId, name, color) {
+    if (!this.getPrice(name, color)) {
+      const priceIndex = this.priceIndex(priceId);
+      return {
+        $set: {
+          [`prices.${priceIndex}.name`]: name,
+          [`prices.${priceIndex}.color`]: color,
+        },
+      };
+    }
+  },
+
+  removePrice(priceId) {
+    return { $pull: { prices: { _id: priceId }}};
   },
 
   addMember(memberId) {
@@ -378,6 +419,16 @@ Boards.before.insert((userId, doc) => {
       name: '',
     };
   });
+  
+  const colorsPrice = Boards.simpleSchema()._schema['prices.$.color'].allowedValues;
+  const defaultPricesColorsPrice = _.clone(colorsPrice).splice(0, 3);
+  doc.prices = defaultPricesColorsPrice.map((color) => {
+    return {
+      color,
+      _id: Random.id(6),
+      name: 'test',
+    };
+  });
 });
 
 Boards.before.update((userId, doc, fieldNames, modifier) => {
@@ -426,6 +477,25 @@ if (Meteor.isServer) {
     );
   });
 
+  Boards.after.update((userId, doc, fieldNames, modifier) => {
+    if (!_.contains(fieldNames, 'prices') ||
+      !modifier.$pull ||
+      !modifier.$pull.prices ||
+      !modifier.$pull.prices._id)
+      return;
+
+    const removedPriceId = modifier.$pull.prices._id;
+    Cards.update(
+      { boardId: doc._id },
+      {
+        $pull: {
+          priceIds: removedPriceId,
+        },
+      },
+      { multi: true }
+    );
+  });
+  
   // Add a new activity if we add or remove a member to the board
   Boards.after.update((userId, doc, fieldNames, modifier) => {
     if (!_.contains(fieldNames, 'members'))

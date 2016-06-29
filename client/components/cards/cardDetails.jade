@@ -42,7 +42,7 @@ template(name="cardDetails")
           each prices
             span.card-price(class="card-price-{{color}}" title=name)= name
         if currentUser.isBoardMember
-          a.card-label.add-price.js-add-prices(title="{{_ 'card-prices-title'}}")
+          a.card-price.add-price.js-add-prices(title="{{_ 'card-prices-title'}}")
             i.fa.fa-plus    
                  
     //- XXX We should use "editable" to avoid repetiting ourselves
