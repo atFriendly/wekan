@@ -20,11 +20,11 @@ template(name="editpricePopup")
     button.primary.wide.left(type="submit") {{_ 'save'}}
     button.js-delete-price.negate.wide.right {{_ 'delete'}}
 
-template(name="deletepricePopup")
+template(name="deletePricePopup")
   p {{_ "price-delete-pop"}}
   button.js-confirm.negate.full(type="submit") {{_ 'delete'}}
 
-template(name="cardpricesPopup")
+template(name="cardPricesPopup")
   ul.edit-prices-pop-over
   a.quiet-button.full.js-add-price {{_ 'price-create'}}
 
