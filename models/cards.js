@@ -100,7 +100,7 @@ Cards.helpers({
       return _.contains(this.priceIds, price._id);
     });
 	console.log('pablo : boardPrices: ' + boardPrices + ", this.priceIds: "  + this.priceIds + ', cardPrices: ' + cardPrices);
-    return boardPrices;
+    return cardPrices;
   },
 
   hasPrice(priceId) {

@@ -426,7 +426,7 @@ Boards.before.insert((userId, doc) => {
     return {
       color,
       _id: Random.id(6),
-      name: 'test',
+      name: '',
     };
   });
 });
