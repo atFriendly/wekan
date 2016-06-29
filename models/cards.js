@@ -82,9 +82,15 @@ Cards.helpers({
   labels() {  
     const boardLabels = this.board().labels;
     const cardLabels = _.filter(boardLabels, (label) => {
+	  console.log('pablo : label: ' + label._id);
       return _.contains(this.labelIds, label._id);
     });
+	for(int i=0;i<boardLabels.length;i++){
+		var a = boardLabels[i];
+		console.log('pablo : ' + a._id);
+	}
 	console.log('pablo : cardLabels: ' + cardLabels + ", this.labelIds: " + this.labelIds);
+
     return cardLabels;
   },
 
@@ -95,9 +101,14 @@ Cards.helpers({
   prices() {
     const boardPrices = this.board().prices;
     const cardPrices = _.filter(boardPrices, (price) => {
+	  console.log('pablo : price: ' + price._id);
       return _.contains(this.priceIds, price._id);
     });
-	console.log('pablo : boardPrices: ' + boardPrices + ", this.priceIds: "  + this.priceIds)
+	console.log('pablo : boardPrices: ' + boardPrices + ", this.priceIds: "  + this.priceIds);
+	for(int i=0;i<boardPrices.length;i++){
+		var a = boardPrices[i];
+		console.log('pablo : ' + a._id);
+	}
     return boardPrices;
   },
 
