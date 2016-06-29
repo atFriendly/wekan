@@ -47,7 +47,6 @@ Template.cardLabelsPopup.events({
   'click .js-select-label'(evt) {
     const card = Cards.findOne(Session.get('currentCard'));
     const labelId = this._id;
-	console.log('cardLabelsPopup, labelId: ' + labelId);
     card.toggleLabel(labelId);
     evt.preventDefault();
   },
@@ -97,6 +96,7 @@ Template.editLabelPopup.events({
 
 Template.cardLabelsPopup.helpers({
   isLabelSelected(cardId) {
+	console.log('cardLabelsPopup, labelIds : ' + labelIds)
     return _.contains(Cards.findOne(cardId).labelIds, this._id);
   },
 });

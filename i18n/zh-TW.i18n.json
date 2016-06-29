@@ -76,7 +76,6 @@
     "cardDetailsActionsPopup-title": "卡片動作",
     "cardLabelsPopup-title": "標籤",
     "cardMembersPopup-title": "成員",
-	"cardPricesPopup-title": "批價111",
     "cardMorePopup-title": "更多",
     "cards": "卡片",
     "change": "變更",
@@ -264,5 +263,6 @@
 	"price":"批價",
 	"price-create":"創建新標價",
 	"card-prices-title": "更改該卡片上的標價",
+	"cardPricesPopup-title": "批價",
 	"card-edit-prices": "編輯標價"
 }
