@@ -96,7 +96,7 @@ Template.editpricePopup.events({
 });
 
 Template.cardpricesPopup.helpers({
-  console.log('cardpricesPopupA, priceIds : ' + priceIds)
+  console.log('cardpricesPopupA, priceIds : ' + priceIds);
   ispriceSelected(cardId) {
 	console.log('cardpricesPopup, priceIds : ' + priceIds)
     return _.contains(Cards.findOne(cardId).priceIds, this._id);
