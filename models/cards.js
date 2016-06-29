@@ -85,12 +85,7 @@ Cards.helpers({
 	  console.log('pablo : label: ' + label._id);
       return _.contains(this.labelIds, label._id);
     });
-	for(int i=0;i<boardLabels.length;i++){
-		var a = boardLabels[i];
-		console.log('pablo : ' + a._id);
-	}
-	console.log('pablo : cardLabels: ' + cardLabels + ", this.labelIds: " + this.labelIds);
-
+	console.log('pablo : cardLabels: ' + cardLabels + ", this.labelIds: " + this.labelIds + ', cardLabels: ' + cardLabels);
     return cardLabels;
   },
 
@@ -104,11 +99,7 @@ Cards.helpers({
 	  console.log('pablo : price: ' + price._id);
       return _.contains(this.priceIds, price._id);
     });
-	console.log('pablo : boardPrices: ' + boardPrices + ", this.priceIds: "  + this.priceIds);
-	for(int i=0;i<boardPrices.length;i++){
-		var a = boardPrices[i];
-		console.log('pablo : ' + a._id);
-	}
+	console.log('pablo : boardPrices: ' + boardPrices + ", this.priceIds: "  + this.priceIds + ', cardPrices: ' + cardPrices);
     return boardPrices;
   },
 
