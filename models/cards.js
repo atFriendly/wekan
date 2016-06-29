@@ -79,7 +79,7 @@ Cards.helpers({
     return Boards.findOne(this.boardId);
   },
 
-  labels() {
+  labels() {  
     const boardLabels = this.board().labels;
     const cardLabels = _.filter(boardLabels, (label) => {
       return _.contains(this.labelIds, label._id);
