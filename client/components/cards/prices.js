@@ -47,7 +47,7 @@ Template.cardPricesPopup.events({
   'click .js-select-price'(evt) {
     const card = Cards.findOne(Session.get('currentCard'));
     const priceId = this._id;
-    card.toggleprice(priceId);
+    card.togglePrice(priceId);
     evt.preventDefault();
   },
   'click .js-edit-price': Popup.open('editprice'),
