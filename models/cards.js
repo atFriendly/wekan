@@ -182,7 +182,7 @@ Cards.mutations({
       return this.removeLabel(labelId);
     } else {
       return this.addLabel(labelId);
-    }
+    } 
   },
   
   addPrice(priceId) {
@@ -197,9 +197,13 @@ Cards.mutations({
     if (this.priceIds && this.priceIds.indexOf(priceId) > -1) {
       return this.removePrice(priceId);
     } else {
-	  $set: {};
+	  this.unSetPriceId();
       return this.addPrice(priceId);
     }
+  },
+  
+  unSetPriceId() {
+    return { $unset: { priceIds: '' }};
   },
 
   assignMember(memberId) {
