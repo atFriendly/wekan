@@ -160,7 +160,7 @@ Cards.mutations({
   setDescription(description) {
     return { $set: { description }};
   },
-
+  
   move(listId, sortIndex) {
     const mutatedFields = { listId };
     if (sortIndex) {
