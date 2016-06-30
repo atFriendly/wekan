@@ -8,6 +8,11 @@ template(name="minicard")
         each labels
           .minicard-label(class="card-label-{{color}}" title="{{name}}")
     .minicard-title= title
+    if labels
+      .minicard-labels
+        each prices
+          .minicard-priec(class="card-price-{{color}}" title="{{name}}")
+    .minicard-title= title
     if members
       .minicard-members.js-minicard-members
         each members

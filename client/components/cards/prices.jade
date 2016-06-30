@@ -28,7 +28,6 @@ template(name="cardPricesPopup")
   ul.edit-prices-pop-over
     each board.prices
       li
-        a.card-price-edit-button.fa.fa-pencil.js-edit-price
         span.card-price.card-price-selectable.js-select-price(class="card-price-{{color}}"
           class="{{# if ispriceSelected ../_id }}active{{/if}}")
             = name
