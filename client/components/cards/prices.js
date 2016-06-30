@@ -72,7 +72,6 @@ Template.createpricePopup.events({
     evt.preventDefault();
     const board = Boards.findOne(Session.get('currentBoard'));
     const name = tpl.$('#priceName').val().trim();
-	console.log('pablo : priceName : ' + name);
     const color = Blaze.getData(tpl.find('.fa-check')).color;
     board.addPrice(name, color);
     Popup.back();
@@ -97,7 +96,6 @@ Template.editpricePopup.events({
 
 Template.cardPricesPopup.helpers({
   ispriceSelected(cardId) {
-	console.log('cardPricesPopup, priceIds : ' + Cards.findOne(cardId).priceIds + ', this._id: ' + this._id);
     return _.contains(Cards.findOne(cardId).priceIds, this._id);
   },
 });
