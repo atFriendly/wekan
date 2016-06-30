@@ -82,10 +82,8 @@ Cards.helpers({
   labels() {  
     const boardLabels = this.board().labels;
     const cardLabels = _.filter(boardLabels, (label) => {
-	  console.log('pablo : label: ' + label._id);
       return _.contains(this.labelIds, label._id);
     });
-	console.log('pablo : boardLabels: ' + boardLabels + ", this.labelIds: " + this.labelIds + ', cardLabels: ' + cardLabels);
     return cardLabels;
   },
 
@@ -96,10 +94,8 @@ Cards.helpers({
   prices() {
     const boardPrices = this.board().prices;
     const cardPrices = _.filter(boardPrices, (price) => {
-	  console.log('pablo : price: ' + price._id);
       return _.contains(this.priceIds, price._id);
     });
-	console.log('pablo : boardPrices: ' + boardPrices + ", this.priceIds: "  + this.priceIds + ', cardPrices: ' + cardPrices);
     return cardPrices;
   },
 
@@ -201,6 +197,7 @@ Cards.mutations({
     if (this.priceIds && this.priceIds.indexOf(priceId) > -1) {
       return this.removePrice(priceId);
     } else {
+	  $set: {};
       return this.addPrice(priceId);
     }
   },
