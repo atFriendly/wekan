@@ -231,7 +231,7 @@ Boards.mutations({
     }
   },
 
-  editLabel(labelId, name, color) {
+  editLabel(labelId, name, color) { 
     if (!this.getLabel(name, color)) {
       const labelIndex = this.labelIndex(labelId);
       return {
