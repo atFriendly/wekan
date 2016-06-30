@@ -54,8 +54,7 @@ Boards.attachSchema(new SimpleSchema({
   'prices.$.color': {
     type: String,
     allowedValues: [
-      'green', 'yellow', 'orange', 'red', 'purple',
-      'blue', 'sky', 'lime', 'pink', 'black',
+      'sky', 'lime', 'pink',
     ],
   },
   // XXX We might want to maintain more informations under the member sub-
