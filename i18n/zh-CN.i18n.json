@@ -259,5 +259,10 @@
     "username": "用户名",
     "view-it": "查看",
     "warn-list-archived": "警告: 该卡片位于已删除的列表中",
-    "what-to-do": "要做什么？"
+    "what-to-do": "要做什么？",
+	"price":"批价",
+	"price-create":"创建新标价",
+	"card-prices-title": "更改该卡片上的标价",
+	"cardPricesPopup-title": "批价",
+	"card-edit-prices": "编辑批价"
 }

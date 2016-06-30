@@ -18,7 +18,7 @@
     "activity-unjoined": "unjoined %s",
     "add": "Add",
     "add-attachment": "Add an attachment",
-    "add-board": "Add a new board 111111111111111111",
+    "add-board": "Add a new board",
     "add-card": "Add a card",
     "add-cover": "Add Cover",
     "add-label": "Add the label",
@@ -261,5 +261,10 @@
     "username": "Username",
     "view-it": "View it",
     "warn-list-archived": "warning: this card is in an archived list",
-    "what-to-do": "What do you want to do?"
+    "what-to-do": "What do you want to do?",
+	"price":"price",
+	"price-create":"create price",
+	"card-prices-title": "edit price",
+	"cardPricesPopup-title": "price",
+	"card-edit-prices": "edit price"
 }
