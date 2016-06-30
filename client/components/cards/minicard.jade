@@ -3,14 +3,14 @@ template(name="minicard")
     if cover
       .minicard-cover
         img(src="{{pathFor cover.url}}")
+    if prices
+      .minicard-prices
+        each prices
+          .minicard-price(class="card-price-{{color}}" title="{{name}}") = name		
     if labels
       .minicard-labels
         each labels
           .minicard-label(class="card-label-{{color}}" title="{{name}}")
-    if prices
-      .minicard-prices
-        each prices
-          .minicard-price(class="card-price-{{color}}" title="{{name}}")
     .minicard-title= title
     if members
       .minicard-members.js-minicard-members
