@@ -180,10 +180,34 @@ Cards.mutations({
   toggleLabel(labelId) {
     if (this.labelIds && this.labelIds.indexOf(labelId) > -1) {
       return this.removeLabel(labelId);
+	  	//pablo test
+	  CardComments.insert({
+		'假設移除lable',
+		boardId: this.currentData().boardId,
+		cardId: this.currentData()._id,
+	  });
+	  Tracker.flush();
+	  autosize.update(input);  
     } else {
+	  //pablo test
+	  CardComments.insert({
+		'假設新增lable',
+		boardId: this.currentData().boardId,
+		cardId: this.currentData()._id,
+	  });
+	  Tracker.flush();
+	  autosize.update(input);  
       return this.addLabel(labelId);
     } 
   },
+  
+	Tracker.autorun(() => {
+	  Session.get('currentCard');
+	  Tracker.afterFlush(() => {
+		autosize.update($('.js-new-comment-input'));
+	  });
+	});
+
   
   addPrice(priceId) {
     return { $addToSet: { priceIds: priceId }};

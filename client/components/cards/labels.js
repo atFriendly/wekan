@@ -48,26 +48,10 @@ Template.cardLabelsPopup.events({
     const card = Cards.findOne(Session.get('currentCard'));
     const labelId = this._id;
     card.toggleLabel(labelId);
-    evt.preventDefault();
-	//pablo test
-	  CardComments.insert({
-		text,
-		boardId: this.currentData().boardId,
-		cardId: this.currentData()._id,
-	  });
-	  Tracker.flush();
-	  autosize.update(input);
-        
+    evt.preventDefault(); 
   },
   'click .js-edit-label': Popup.open('editLabel'),
   'click .js-add-label': Popup.open('createLabel'),
-});
-
-Tracker.autorun(() => {
-  Session.get('currentCard');
-  Tracker.afterFlush(() => {
-    autosize.update($('.js-new-comment-input'));
-  });
 });
 
 Template.formLabel.events({
