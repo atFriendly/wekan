@@ -190,7 +190,7 @@ Cards.mutations({
 	console.log('pablo test2 labelName: ' + labelName);
 
     CardComments.insert({
-	  text: '移除標籤' + labelName,
+	  text: '移除標籤: ' + labelName,
 	  boardId: this.boardId,
 	  cardId: this._id,
     });
@@ -198,7 +198,7 @@ Cards.mutations({
 	  
     } else {
     CardComments.insert({
-      text: '新增標籤' + labelName,
+      text: '新增標籤: ' + labelName,
       boardId: this.boardId,
       cardId: this._id,
     });
@@ -230,7 +230,7 @@ Cards.mutations({
 	  console.log('pablo test2 priceName: ' + priceName);
 
      CardComments.insert({
-        text: '移除批價:' + priceName,
+        text: '移除批價: ' + priceName,
         boardId: this.boardId,
         cardId: this._id,
 	  });
@@ -240,7 +240,7 @@ Cards.mutations({
 	  this.unSetPriceId();
 	  
       CardComments.insert({
-        text: '新增批價:' + priceName,
+        text: '新增批價: ' + priceName,
         boardId: this.boardId,
         cardId: this._id,
 	  });
