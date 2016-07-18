@@ -78,7 +78,7 @@ Template.formLabel.events({
 Template.createLabelPopup.events({
   // Create the new label
   'submit .create-label'(evt, tpl) {
-    evt.preventDefault();
+    evt.preventDefault(); 
     const board = Boards.findOne(Session.get('currentBoard'));
     const name = tpl.$('#labelName').val().trim();
     const color = Blaze.getData(tpl.find('.fa-check')).color;
@@ -105,7 +105,6 @@ Template.editLabelPopup.events({
 
 Template.cardLabelsPopup.helpers({
   isLabelSelected(cardId) {
-	console.log('cardLabelsPopup, labelIds : ' + Cards.findOne(cardId).labelIds)
     return _.contains(Cards.findOne(cardId).labelIds, this._id);
   },
 });
