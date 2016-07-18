@@ -52,7 +52,7 @@ Template.cardLabelsPopup.events({
 console.log('pablo test labelName: ' + labelName);
 	//pablo test
 	  CardComments.insert({
-		labelName,
+		text: labelName,
 		boardId: card.boardId,
 		cardId: card._id,
 	  });
