@@ -179,7 +179,6 @@ Cards.mutations({
 
   toggleLabel(labelId) {
     if (this.labelIds && this.labelIds.indexOf(labelId) > -1) {
-      return this.removeLabel(labelId);
 	  	//pablo test
 	  CardComments.insert({
 		'假設移除lable',
@@ -188,6 +187,8 @@ Cards.mutations({
 	  });
 	  Tracker.flush();
 	  autosize.update(input);  
+	  return this.removeLabel(labelId);
+
     } else {
 	  //pablo test
 	  CardComments.insert({
