@@ -475,25 +475,6 @@ if (Meteor.isServer) {
       { multi: true }
     );
   });
-
-  Boards.after.update((userId, doc, fieldNames, modifier) => {
-    if (!_.contains(fieldNames, 'prices') ||
-      !modifier.$pull ||
-      !modifier.$pull.prices ||
-      !modifier.$pull.prices._id)
-      return;
-
-    const removedPriceId = modifier.$pull.prices._id;
-    Cards.update(
-      { boardId: doc._id },
-      {
-        $pull: {
-          priceIds: removedPriceId,
-        },
-      },
-      { multi: true }
-    );
-  });
   
   // Add a new activity if we add or remove a member to the board
   Boards.after.update((userId, doc, fieldNames, modifier) => {

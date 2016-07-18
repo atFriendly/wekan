@@ -185,6 +185,29 @@ Cards.mutations({
     } 
   },
   
+  toggleLabel2(labelId, labelName) {
+    if (this.labelIds && this.labelIds.indexOf(labelId) > -1) {
+	console.log('pablo test2 labelName: ' + labelName);
+
+    CardComments.insert({
+	  text: '移除標籤' + labelName,
+	  boardId: card.boardId,
+	  cardId: card._id,
+    });
+      return this.removeLabel(labelId);
+	  
+    } else {
+    CardComments.insert({
+      text: '新增標籤' + labelName,
+      boardId: card.boardId,
+      cardId: card._id,
+    });
+      return this.addLabel(labelId);
+	  
+    } 
+  },
+  
+  
   addPrice(priceId) {
     return { $addToSet: { priceIds: priceId }};
   },
@@ -201,6 +224,31 @@ Cards.mutations({
       return this.addPrice(priceId);
     }
   },
+  
+  togglePrice2(priceId, priceName) {
+    if (this.priceIds && this.priceIds.indexOf(priceId) > -1) {
+	  console.log('pablo test2 priceName: ' + priceName);
+
+     CardComments.insert({
+        text: '移除批價:' + priceName,
+        boardId: card.boardId,
+        cardId: card._id,
+	  });
+      return this.removePrice(priceId);
+	  
+    } else {
+	  this.unSetPriceId();
+	  
+      CardComments.insert({
+        text: '新增批價:' + priceName,
+        boardId: card.boardId,
+        cardId: card._id,
+	  });
+      return this.addPrice(priceId);
+	  
+    }
+  },
+  
   
   unSetPriceId() {
     return { $unset: { priceIds: '' }};

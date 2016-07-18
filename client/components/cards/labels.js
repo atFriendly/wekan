@@ -47,16 +47,9 @@ Template.cardLabelsPopup.events({
   'click .js-select-label'(evt) {
     const card = Cards.findOne(Session.get('currentCard'));
     const labelId = this._id;
-    card.toggleLabel(labelId); 
 	const labelName = this.name;
-console.log('pablo test labelName: ' + labelName);
-	//pablo test
-	  CardComments.insert({
-		text: labelName,
-		boardId: card.boardId,
-		cardId: card._id,
-	  });
-	
+    card.toggleLabel2(labelId, labelName); 
+
     evt.preventDefault();
   },
   'click .js-edit-label': Popup.open('editLabel'),
