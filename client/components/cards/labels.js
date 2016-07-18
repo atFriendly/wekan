@@ -53,8 +53,8 @@ Template.cardLabelsPopup.events({
 	//pablo test
 	  CardComments.insert({
 		labelName,
-		boardId: this.currentData().boardId,
-		cardId: this.currentData()._id,
+		boardId: card.boardId,
+		cardId: card._id,
 	  });
 	  Tracker.flush();
 	  autosize.update(input); 
