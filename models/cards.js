@@ -191,16 +191,16 @@ Cards.mutations({
 
     CardComments.insert({
 	  text: '移除標籤' + labelName,
-	  boardId: card.boardId,
-	  cardId: card._id,
+	  boardId: this.boardId,
+	  cardId: this._id,
     });
       return this.removeLabel(labelId);
 	  
     } else {
     CardComments.insert({
       text: '新增標籤' + labelName,
-      boardId: card.boardId,
-      cardId: card._id,
+      boardId: this.boardId,
+      cardId: this._id,
     });
       return this.addLabel(labelId);
 	  
@@ -231,8 +231,8 @@ Cards.mutations({
 
      CardComments.insert({
         text: '移除批價:' + priceName,
-        boardId: card.boardId,
-        cardId: card._id,
+        boardId: this.boardId,
+        cardId: this._id,
 	  });
       return this.removePrice(priceId);
 	  
@@ -241,8 +241,8 @@ Cards.mutations({
 	  
       CardComments.insert({
         text: '新增批價:' + priceName,
-        boardId: card.boardId,
-        cardId: card._id,
+        boardId: this.boardId,
+        cardId: this._id,
 	  });
       return this.addPrice(priceId);
 	  
