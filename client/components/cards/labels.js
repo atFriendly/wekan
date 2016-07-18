@@ -47,9 +47,9 @@ Template.cardLabelsPopup.events({
   'click .js-select-label'(evt) {
     const card = Cards.findOne(Session.get('currentCard'));
     const labelId = this._id;
-    card.toggleLabel(labelId);
-	const labelName = this._name;
-
+    card.toggleLabel(labelId); 
+	const labelName = this.name;
+console.log('pablo test labelName: ' + labelName);
 	//pablo test
 	  CardComments.insert({
 		labelName,
