@@ -56,8 +56,6 @@ Template.cardLabelsPopup.events({
 		boardId: card.boardId,
 		cardId: card._id,
 	  });
-	  Tracker.flush();
-	  autosize.update(input); 
 	
     evt.preventDefault();
   },
