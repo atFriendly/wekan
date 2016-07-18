@@ -48,7 +48,18 @@ Template.cardLabelsPopup.events({
     const card = Cards.findOne(Session.get('currentCard'));
     const labelId = this._id;
     card.toggleLabel(labelId);
-    evt.preventDefault(); 
+	const labelName = this._name;
+
+	//pablo test
+	  CardComments.insert({
+		labelName,
+		boardId: this.currentData().boardId,
+		cardId: this.currentData()._id,
+	  });
+	  Tracker.flush();
+	  autosize.update(input); 
+	
+    evt.preventDefault();
   },
   'click .js-edit-label': Popup.open('editLabel'),
   'click .js-add-label': Popup.open('createLabel'),
