@@ -52,7 +52,7 @@ Cards.attachSchema(new SimpleSchema({
     type: String,
   },
   sort: {
-    type: Number,
+    type: Number, 
     decimal: true,
   },
 }));
