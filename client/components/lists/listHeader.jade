@@ -37,8 +37,8 @@ template(name="boardLists")
 template(name="allLists")
   ul.pop-over-list
     each currentBoard.allLists
-      li
-        if($eq ../_id _id)
-          a.disabled {{title}} ({{_ 'current'}})
-        else
-          a.js-select-list= title
+     li
+      if($eq ../_id _id)
+        a.disabled {{title}} ({{_ 'current'}})
+      else 
+        a.js-select-list= title
