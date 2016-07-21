@@ -126,6 +126,10 @@ Boards.helpers({
   lists() {
     return Lists.find({ boardId: this._id, archived: false }, { sort: { sort: 1 }});
   },
+  
+  allLists() {
+    return Lists.find({archived: false }, { sort: { sort: 1 }});
+  },
 
   activities() {
     return Activities.find({ boardId: this._id }, { sort: { createdAt: -1 }});

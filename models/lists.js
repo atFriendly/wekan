@@ -54,7 +54,7 @@ Lists.helpers({
 
   allList(){
 	return Lists.find({ archived : false });
-  }
+  },
   
   board() {
     return Boards.findOne(this.boardId);
