@@ -52,6 +52,10 @@ Lists.helpers({
     return Cards.find({ listId: this._id });
   },
 
+  allList(){
+	return Lists.find({ archived : false });
+  }
+  
   board() {
     return Boards.findOne(this.boardId);
   },
