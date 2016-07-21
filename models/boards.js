@@ -127,7 +127,7 @@ Boards.helpers({
     return Lists.find({ boardId: this._id, archived: false }, { sort: { sort: 1 }});
   },
   
-  allLists() {
+  allListsss() {
     return Lists.find({archived: false }, { sort: { sort: 1 }});
   },
 
